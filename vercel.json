@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "pip install -r astroalgo_bot/requirements.txt",
+  "env": {
+    "PYTHONUNBUFFERED": "1",
+    "ENVIRONMENT": "production"
+  },
+  "functions": {
+    "astroalgo_bot/backend/main.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "astroalgo_bot/backend/main.py"
+    }
+  ]
+}
